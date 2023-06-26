@@ -26,14 +26,12 @@ export default function Signup() {
       setShowError("");
       return 0;
     }
-    try {
-      await api.post("/user", data).then(() => navigate("/login"));
-    } catch (err) {
-      if (err.response.status === 409) {
+
+      await api.post("/user", data).then(() => navigate("/login")).catch((err) =>{if (err.response.status === 409) {
         alert("email em uso, utilize outro.");
       }
-      console.log(err.response.data);
-    }
+      console.log(err.response.data);})
+   
   }
 
   return (

@@ -19,13 +19,11 @@ export default function Signin() {
   const [showError, setShowError] = useState("none");
 
   async function onSubmit(data: Inputs) {
-    try {
-      await api.post("/user/signin", data).then(() => navigate("/"));
-    } catch (err) {
-      if (err.response.status === 401) {
+
+      await api.post("/user/signin", data).then(() => navigate("/")).catch((err)=>{if (err.response.status === 401) {
         setShowError("");
-      } else alert(err.message);
-    }
+      } else alert(err.message);});
+    
   }
 
   return (
