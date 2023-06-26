@@ -9,7 +9,7 @@ export const TitleCard = styled.div`
   :visited {
     color: black;
   }
-  @media (max-width:600px) {
+  @media (max-width:650px) {
     font-size: 23px;
     font-weight: 800;
   }

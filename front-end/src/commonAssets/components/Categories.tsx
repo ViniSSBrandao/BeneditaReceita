@@ -58,8 +58,7 @@ const Container = styled.div`
       cursor: pointer;
     }
   }
-  /* ff910f */
-  /* c2700d */
+
   span {
     box-sizing: border-box;
     width: 50%;
