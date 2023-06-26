@@ -9,6 +9,10 @@ export const TitleCard = styled.div`
   :visited {
     color: black;
   }
+  @media (max-width:600px) {
+    font-size: 23px;
+    font-weight: 800;
+  }
 `;
 
 export const InferiorDiv = styled.div`
@@ -39,12 +43,16 @@ export const InferiorDiv = styled.div`
     border: 0px solid transparent;
     box-shadow: none;
   }
+  @media (max-width:600px) {
+    font-size: large;
+  }
 `;
 
 export const SuperiorDiv = styled.div`
   height: fit-content;
   max-height: 280px;
   display: flex;
+  
 `;
 
 export const RecipeContainer = styled.div`

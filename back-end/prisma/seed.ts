@@ -72,7 +72,7 @@ async function main() {
     data: {
       RecipeId: Recipe.id,
       Description:
-        'Asse a carne ate dourar de ambos os lados (aproximadamente 1 min e 30 segundos por lado apos a panela estar quente)',
+        'Asse a carne ate dourar de ambos os lados (aproximadamente 1 min e 30 segundos por lado apos a panela estar quente',
       img: 'https://www.jessicagavin.com/wp-content/uploads/2020/03/stovetop-burgers-5-600x900.jpg',
       step: 3,
     },
