@@ -23,7 +23,13 @@ export const InferiorDiv = styled.div`
   padding-right: 5px;
   text-indent: 15%;
   text-align: justify;
-
+  margin-top: 15px;
+  @media (max-width:900px) {
+    height: 75%;
+  }
+  @media (min-width:900px) {
+    height: 55%;
+  }
   ::-webkit-scrollbar {
     width: 12px;
   }
@@ -68,6 +74,9 @@ export const RecipeContainer = styled.div`
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
   overflow-x: hidden;
+  @media (max-width: 900px) {
+    height: 600px;
+  }
 `;
 
 export const ImageDiv = styled.div`

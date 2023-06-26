@@ -1,5 +1,6 @@
-import { BigInputs } from "../styled";
+import { BigInputs, StepAdded } from "../styled";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useState } from "react";
 
 export type Step = {
   Description: string;
@@ -17,19 +18,24 @@ export default function Steps(prop: any) {
     handleSubmit,
     formState: { errors },
   } = useForm<Step>();
+  const [addStep, setaddStep] = useState('none')
 
   const onSubmit: SubmitHandler<Step> = (data) => {
     count++;
     data.step = count;
     array.push(data);
     prop.step(array);
+    setaddStep('')
+    setTimeout(() => {
+      setaddStep('none')
+    }, 1000);
   };
 
   return (
     <>
+    <StepAdded style={{display:addStep}}>Passo adicionado</StepAdded>
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2>Descreva o passo</h2>
-        {/* register your input into the hook by invoking the "register" function */}
         <input
           style={{ background: "white" }}
           placeholder="imagem para referencia"
@@ -67,3 +73,5 @@ export default function Steps(prop: any) {
     </>
   );
 }
+
+

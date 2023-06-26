@@ -1,6 +1,6 @@
 import { useState } from "react";
 import DescriptionForm from "./components/descriptionForm";
-import { Container, Globalstyles, Button } from "./styled";
+import { Container, Globalstyles, Button, StepAdded } from "./styled";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Receita } from "./components/descriptionForm";
 
@@ -13,7 +13,7 @@ export default function AddRecipe() {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-
+  const [addStep, setaddStep] = useState('none')
   const [receita, setreceita] = useState<Receita>({} as Receita);
   const [step, setstep] = useState<Steps>({} as Steps);
   const [ingredientArray, setingredientArray] = useState<DataType[]>(
@@ -26,7 +26,10 @@ export default function AddRecipe() {
       name: data.name,
       measureUnit: data.measureUnit,
     };
-
+    setaddStep('')
+    setTimeout(() => {
+      setaddStep('none')
+    }, 1000);
     array.push(sendData);
     setingredientArray(array);
   };
@@ -49,7 +52,7 @@ export default function AddRecipe() {
     <Container>
       <h1>Compartilhe suas receitas favoritas!</h1>
       <DescriptionForm receita={setreceita} />
-
+      <StepAdded style={{display:addStep}}>Ingrediente acrescentado!</StepAdded>
       <form onSubmit={handleSubmit(onSubmit)}>
         <span>
           <h2>adicionar ingredientes:</h2>

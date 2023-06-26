@@ -126,7 +126,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	
-	background-color:#dc9033;
+	background-color:#c5b198;
 }
 ol, ul {
 	list-style: none;
@@ -153,3 +153,21 @@ h1{
 	box-sizing: border-box;
 }
 `;
+
+export const StepAdded = styled.div`
+background-color: #FFB80A;
+color: #3b3b3b;
+  width: 230px;
+  height: 100px;
+  position: fixed;
+  font-size: large;
+  font-weight: 600;
+  top: 160px;
+  right: 5%;
+  z-index: 3;
+  padding-top: 40px;
+  font-family: Oswald;
+  box-sizing: border-box;
+  border-radius: 15px;
+  
+`
