@@ -67,7 +67,7 @@ export const Title = styled.span`
   box-sizing: border-box;
   word-wrap: break-word;
   color: #6d3a00;
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 650px) {
     font-size: 30px;
   }
   @media screen and (min-width: 800px) {
@@ -92,7 +92,7 @@ export const HeadDiv = styled.div`
       max-height: 400px;
     }
     @media screen and (max-width: 2800px) {
-      max-height: 600px;
+      max-height: 650px;
     }
     max-height: 800px;
     position: relative;
@@ -135,6 +135,21 @@ export const GlobalStyles = createGlobalStyle`
   }
 
 `;
+
+export const Welcome = styled.div`
+  width: 230px;
+  height: 100px;
+  background-color: #ff531c;
+  position: fixed;
+  top: 160px;
+  right: 5%;
+  z-index: 3;
+  padding-top: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  box-sizing: border-box;
+  border-radius: 15px;
+  text-shadow: 0px 0.5px #424242;
+`
 
 export const FeedContainer = styled.div`
   top: 40px;

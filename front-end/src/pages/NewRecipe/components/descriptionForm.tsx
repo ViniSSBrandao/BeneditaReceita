@@ -1,4 +1,5 @@
-import { BigInputs } from "../styled";
+import { useState } from "react";
+import { BigInputs, StepAdded } from "../styled";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 export type Receita = {
@@ -14,12 +15,19 @@ export default function Description(prop: any) {
     handleSubmit,
     formState: { errors },
   } = useForm<Receita>();
+  const [addStep, setaddStep] = useState('none')
+
   const onSubmit: SubmitHandler<Receita> = (data) => {
     prop.receita(data);
+    setaddStep('')
+    setTimeout(() => {
+      setaddStep('none')
+    }, 1000);
   };
 
   return (
     <>
+     <StepAdded style={{display:addStep}}>História adicionada!</StepAdded>
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2>Nome da sua Receita</h2>
         <input
@@ -61,3 +69,4 @@ export default function Description(prop: any) {
     </>
   );
 }
+

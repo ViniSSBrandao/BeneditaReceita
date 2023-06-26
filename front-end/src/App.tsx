@@ -8,10 +8,12 @@ import Header from "./commonAssets/components/Header";
 import Categories from "./commonAssets/components/Categories";
 import RecipePage from "./pages/RecipePage";
 import NewRecipe from "./pages/NewRecipe";
+import { UserProvider } from "./contexts/userContext";
 
 function App() {
   return (
     <BrowserRouter>
+    <UserProvider>
       <Header />
       <SpacingContainer></SpacingContainer>
 
@@ -24,6 +26,7 @@ function App() {
         <Route path="/receita/:id" element={<RecipePage />} />
         <Route path="/nova-receita/" element={<NewRecipe />} />
       </Routes>
+      </UserProvider>
     </BrowserRouter>
   );
 }

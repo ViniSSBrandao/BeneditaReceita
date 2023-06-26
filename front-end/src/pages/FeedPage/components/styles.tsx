@@ -9,6 +9,10 @@ export const TitleCard = styled.div`
   :visited {
     color: black;
   }
+  @media (max-width:650px) {
+    font-size: 23px;
+    font-weight: 800;
+  }
 `;
 
 export const InferiorDiv = styled.div`
@@ -19,7 +23,13 @@ export const InferiorDiv = styled.div`
   padding-right: 5px;
   text-indent: 15%;
   text-align: justify;
-
+  margin-top: 15px;
+  @media (max-width:900px) {
+    height: 75%;
+  }
+  @media (min-width:900px) {
+    height: 55%;
+  }
   ::-webkit-scrollbar {
     width: 12px;
   }
@@ -39,12 +49,16 @@ export const InferiorDiv = styled.div`
     border: 0px solid transparent;
     box-shadow: none;
   }
+  @media (max-width:600px) {
+    font-size: large;
+  }
 `;
 
 export const SuperiorDiv = styled.div`
   height: fit-content;
   max-height: 280px;
   display: flex;
+  
 `;
 
 export const RecipeContainer = styled.div`
@@ -60,6 +74,9 @@ export const RecipeContainer = styled.div`
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
   overflow-x: hidden;
+  @media (max-width: 900px) {
+    height: 600px;
+  }
 `;
 
 export const ImageDiv = styled.div`

@@ -8,39 +8,38 @@ export const BodyHome = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding-right: 25px;
   box-sizing: border-box;
   user-select: none;
+  text-align: left;
+  
   @media (max-width: 900px) {
-    height: 175px;
+   display: none;
   }
   h1 {
     padding-left: 10%;
+    padding-right: 10%;
     font-family: "Passion One", cursive;
     font-size: 106px;
     font-weight: 700;
     line-height: 117px;
     letter-spacing: 0.05em;
-    text-align: left;
     color: #ffffff;
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       font-family: Passion One;
       font-size: 76px;
       font-weight: 700;
       line-height: 84px;
       letter-spacing: 0.05em;
-      text-align: center;
-      padding-left: 0;
     }
   }
   h2 {
     padding-left: 10%;
-    width: 700px;
+    padding-right: 10%;
+    width: 90%;
     font-family: "Oswald", sans-serif;
     font-size: 43px;
     font-weight: 700;
     line-height: 64px;
-    text-align: left;
     color: #ffffff;
     box-sizing: border-box;
     @media (max-width: 1300px) {
@@ -52,24 +51,28 @@ export const BodyHome = styled.div`
       font-size: 23px;
       font-weight: 700;
       line-height: 34px;
-      text-align: center;
     }
   }
 `;
 
 export const BodySignin = styled.div`
-  width: 535px;
-  color: white;
+margin-top: 10%;
+  background-color: #ff531c;
+  position: relative;
+  right: 10px;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   user-select: none;
+  border-radius: 35px;
+  padding: 10px;
   span {
     margin-bottom: 5px;
   }
   @media (max-width: 900px) {
-    width: 100%;
+    width: 110%;
   }
   h2 {
     font-size: xx-large;
@@ -81,14 +84,14 @@ export const BodySignin = styled.div`
     margin-top: 24px;
   }
   input {
-    margin-left: 50px;
-    margin-right: 50px;
+    border-style: solid;
+    border-width: 1px;
     height: 65px;
     width: 429px;
     margin-bottom: 13px;
     padding-left: 17px;
     box-sizing: border-box;
-    border-radius: 6px;
+    border-radius: 60px;
     font-family: "Oswald", sans-serif;
     font-size: 27px;
     font-weight: 700;
@@ -96,7 +99,7 @@ export const BodySignin = styled.div`
     color: #000000;
     @media (max-width: 900px) {
       height: 55px;
-      width: 330px;
+      width: 100%;
       font-size: 22px;
     }
   }
@@ -112,7 +115,7 @@ export const Button = styled.button`
   border: none;
   margin-bottom: 36px;
   height: 65px;
-  width: 429px;
+  width: 90%;
   border-radius: 5px;
   color: #ffffff;
   font-family: "Oswald", sans-serif;
@@ -121,7 +124,7 @@ export const Button = styled.button`
   line-height: 26px;
   @media (max-width: 900px) {
     height: 55px;
-    width: 330px;
+    width: 90%;
     font-size: 22px;
   }
 `;

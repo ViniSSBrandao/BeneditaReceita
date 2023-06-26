@@ -84,7 +84,7 @@ export default function Signup() {
           As senhas devem ser iguais
         </span>
         <input
-          style={{ background: "#FF531C", color: "#ffffff", border: "none" }}
+          style={{ background: "#ff910f", color: "#ffffff", border: "none" }}
           type="submit"
         />
       </form>

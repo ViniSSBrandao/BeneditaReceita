@@ -1,13 +1,17 @@
 import FeedPage from "./FeedPage";
 import { useRecipeList } from "../hooks/api/useRecipes";
-
 import { useState } from "react";
-import { FeedContainer, GlobalStyles } from "./RecipePage/styles";
+import { FeedContainer, GlobalStyles, Welcome } from "./RecipePage/styles";
+import useToken from "../hooks/api/usetoken";
+
+
 
 export default function Landing() {
   const [recipeList, setRecipeList] = useState<Recipe>([{}] as Recipe);
+  const [hideGreet, setHideGreet] = useState('')
   const { recipes } = useRecipeList();
-
+  const token = useToken()
+  
   if (!recipeList[0].id) {
     if (recipes) {
       const { data } = recipes;
@@ -17,8 +21,15 @@ export default function Landing() {
     }
   }
 
+
+  setTimeout(() => {
+    setHideGreet('none')
+  }, 2000);
+  
+
   return (
     <>
+    {typeof(token) == 'string' ?<Welcome style={{display:hideGreet}}>Bem-Vindo(a) de volta, Chef!</Welcome>: ''}
       <FeedContainer></FeedContainer>
       {recipeList.map((e) => (
         <FeedPage
