@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Categories {
+  id                Int                 @id @default(autoincrement())
+  name              String
+  RecipeCategoryRel RecipeCategoryRel[]
+}
+
+
+model Recipe {
+  id                Int                 @id @default(autoincrement())
+  userId            Int?                 
+  name              String              @db.VarChar(255)
+  Description       String
+  img               String
+  createdAt         DateTime            @default(now())
+  User              User?                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Steps             Steps[]
+  Ingredients       Ingredients[]
+  RecipeCategoryRel RecipeCategoryRel[]
+}
+
+model Steps{
+  id                Int                 @id @default(autoincrement())
+  Description       String
+  img               String?
+  step              Int
+  RecipeId   Int
+  Recipe     Recipe     @relation(fields: [RecipeId], references: [id], onDelete: Cascade)
+}
+
+model RecipeCategoryRel {
+  id         Int        @id @default(autoincrement())
+  RecipeId   Int
+  CategoryId Int
+  Categories Categories @relation(fields: [CategoryId], references: [id], onDelete: Cascade)
+  Recipe     Recipe     @relation(fields: [RecipeId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String  @unique @db.VarChar(255)
+  password  String  @db.VarChar(255)
+  name  String  @db.VarChar(255)
+  image String  
+  createdAt DateTime @default(now())
+  Session   Session[]
+  Recipe    Recipe[]
+}
+
+model Session {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Ingredients {
+  id          Int    @id @default(autoincrement())
+  RecipeId    Int
+  quantity    Int
+  name        String
+  measureUnit String @db.VarChar(255)
+  Recipe      Recipe @relation(fields: [RecipeId], references: [id], onDelete: Cascade)
+}
