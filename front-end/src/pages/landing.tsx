@@ -3,7 +3,7 @@ import { useRecipeList } from "../hooks/api/useRecipes";
 import { useState } from "react";
 import { FeedContainer, GlobalStyles, Welcome } from "./RecipePage/styles";
 import useToken from "../hooks/api/usetoken";
-import styled from "styled-components";
+
 
 
 export default function Landing() {
@@ -24,7 +24,7 @@ export default function Landing() {
 
   setTimeout(() => {
     setHideGreet('none')
-  }, 5000);
+  }, 2000);
   
 
   return (

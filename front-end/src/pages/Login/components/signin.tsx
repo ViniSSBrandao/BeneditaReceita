@@ -57,7 +57,7 @@ export default function Signin() {
         {errors.password && <span>Preencha este campo</span>}
         <span style={{ display: showError }}>Senha incorreta!</span>
         <input
-          style={{ background: "#FF531C", color: "#ffffff", border: "none" }}
+          style={{ background: "#ff910f", color: "#ffffff", border: "none" }}
           type="submit"
         />
       </form>
